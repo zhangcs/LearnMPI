@@ -5,12 +5,18 @@ CFLAGS= -O3 -Wall -g
 SRCS_hello= hello.c
 OBJS_hello= ${SRCS_hello:.c=.o}
 
+SRCS_sendrecv= sendrecv.c
+OBJS_sendrecv= ${SRCS_sendrecv:.c=.o}
+
 SRCS_mmult= mmult.c
 OBJS_mmult= ${SRCS_mmult:.c=.o}
 
 # several test examples
 hello: Makefile $(OBJS_hello) 
 	$(CC) $(CFLAGS) -o hello $(OBJS_hello) $(LIBS)
+
+send: Makefile $(OBJS_sendrecv) 
+	$(CC) $(CFLAGS) -o sendrecv $(OBJS_sendrecv) $(LIBS)
 
 mmult: Makefile $(OBJS_mmult) 
 	$(CC) $(CFLAGS) -o mmult $(OBJS_mmult) $(LIBS)
@@ -28,6 +34,6 @@ clean:
 
 allclean:
 	rm -f *.out *.o *~
-	rm -f hello mmult
+	rm -f hello sendrecv mmult
 
 
