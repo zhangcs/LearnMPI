@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
     }
 
     else {
-        printf("ERROR: Need %d processors!\n", SIZEN);
+        printf("ERROR: Need %d processors!\n", SIZEM);
     }
 
     MPI_Type_free(&rowtype);
